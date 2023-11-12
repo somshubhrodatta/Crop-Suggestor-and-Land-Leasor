@@ -1,0 +1,79 @@
+,Soil_type,Crops
+0,red and yellow,rice
+1,red and yellow,maize
+2,red and yellow,chickpea
+3,red and yellow,kidneybeans
+4,red and yellow,pigeonpeas
+5,red and yellow,mothbeans
+6,red and yellow,mungbean
+7,red and yellow,blackgram
+8,red and yellow,lentil
+9,red and yellow,pomegranate
+10,red and yellow,banana
+11,red and yellow,mango
+12,red and yellow,grapes
+13,red and yellow,watermelon
+14,red and yellow,muskmelon
+15,red and yellow,apple
+16,red and yellow,orange
+17,red and yellow,papaya
+18,red and yellow,coconut
+19,red and yellow,cotton
+20,red and yellow,jute
+21,red and yellow,coffee
+22,alluvial,rice
+23,alluvial,maize
+24,alluvial,chickpea
+25,alluvial,kidneybeans
+26,alluvial,pigeonpeas
+27,alluvial,mothbeans
+28,alluvial,mungbean
+29,alluvial,blackgram
+30,alluvial,lentil
+31,alluvial,pomegranate
+32,alluvial,banana
+33,alluvial,mango
+34,alluvial,grapes
+35,alluvial,watermelon
+36,alluvial,muskmelon
+37,alluvial,apple
+38,alluvial,orange
+39,alluvial,papaya
+40,alluvial,coconut
+41,alluvial,cotton
+42,alluvial,jute
+43,alluvial,coffee
+44,black,rice
+45,black,maize
+46,black,chickpea
+47,black,kidneybeans
+48,black,pigeonpeas
+49,black,mothbeans
+50,black,mungbean
+51,black,blackgram
+52,black,lentil
+53,black,pomegranate
+54,black,banana
+55,black,mango
+56,black,grapes
+57,black,watermelon
+58,black,muskmelon
+59,black,apple
+60,black,orange
+61,black,papaya
+62,black,coconut
+63,black,cotton
+64,black,jute
+65,black,coffee
+66,laterite,cashew
+67,laterite,rubber
+68,laterite,coconut
+69,desert,pearl millet
+70,desert,mustard
+71,desert,bajra
+72,mountain,potatoes
+73,mountain,apples
+74,mountain,tea
+75,red,groundnuts
+76,red,pulses
+77,red,jute

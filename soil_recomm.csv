@@ -1,0 +1,79 @@
+﻿Soil_type,Crops
+red and yellow     ,       rice
+red and yellow  ,      maize
+red and yellow  ,    chickpea
+red and yellow  ,kidneybeans
+red and yellow  , pigeonpeas
+red and yellow  ,   mothbeans
+red and yellow  ,    mungbean
+red and yellow  ,  blackgram
+red and yellow  ,     lentil
+red and yellow  ,pomegranate
+red and yellow  ,     banana
+red and yellow  ,      mango
+red and yellow  ,     grapes
+red and yellow  ,  watermelon
+red and yellow  ,  muskmelon
+red and yellow  ,      apple
+red and yellow  ,     orange
+red and yellow  ,     papaya
+red and yellow  ,    coconut
+red and yellow  ,     cotton
+red and yellow  ,       jute
+red and yellow  ,     coffee
+  alluvial       ,       rice
+  alluvial       ,      maize
+  alluvial       ,    chickpea
+  alluvial       ,kidneybeans
+  alluvial       , pigeonpeas
+  alluvial       ,   mothbeans
+  alluvial       ,    mungbean
+  alluvial       ,  blackgram
+  alluvial       ,     lentil
+  alluvial       ,pomegranate
+  alluvial       ,     banana
+  alluvial       ,      mango
+  alluvial       ,     grapes
+  alluvial       ,  watermelon
+  alluvial       ,  muskmelon
+  alluvial       ,      apple
+  alluvial       ,     orange
+  alluvial       ,     papaya
+  alluvial       ,    coconut
+  alluvial       ,     cotton
+  alluvial       ,       jute
+  alluvial       ,     coffee
+    black        ,      rice
+    black        ,     maize
+    black        ,   chickpea
+    black       ,kidneybeans
+    black        ,pigeonpeas
+    black        ,  mothbeans
+    black        ,   mungbean
+    black        , blackgram
+    black        ,    lentil
+    black       ,pomegranate
+    black        ,    banana
+    black        ,     mango
+    black        ,    grapes
+    black        , watermelon
+    black        , muskmelon
+    black        ,     apple
+    black        ,    orange
+    black        ,    papaya
+    black        ,   coconut
+    black        ,    cotton
+    black        ,      jute
+    black        ,    coffee
+ laterite        ,     cashew
+ laterite        ,     rubber
+ laterite        ,    coconut
+   desert        ,pearl millet
+   desert        ,    mustard
+   desert        ,       bajra
+ mountain        ,   potatoes
+ mountain        ,     apples
+ mountain        ,       tea
+      red        , groundnuts
+      red        ,     pulses
+      red        ,       jute
