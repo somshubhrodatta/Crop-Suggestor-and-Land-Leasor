@@ -5,19 +5,19 @@ Created on Sun Nov  5 18:07:09 2023
 
 @author: somshubhrodatta
 """
-
+import json
 import pandas as pd
-import geopandas as gpd
+#mport geopandas as gpd
 import numpy as np
 
 # Load your data
-agri = pd.read_csv('Agri_district.csv')
+#agri = pd.read_csv('Agri_district.csv')
 weather = pd.read_csv('IndianWeatherRepository.csv')
 rain = pd.read_csv('district wise rainfall normal.csv')
 recomm = pd.read_csv('crop_recommendation.csv')
 soil = pd.read_csv('soil.csv')
-geo = gpd.read_file(filename='india_geo')
-sr=pd.read_csv('soil_recomm.csv')
+#geo = gpd.read_file(filename='india_geo')
+sr=pd.read_csv('sr.csv')
 soil_crops_mapping = {
     'red and yellow': ['rice', 'maize', 'chickpea', 'kidneybeans', 'pigeonpeas', 'mothbeans', 'mungbean', 'blackgram', 'lentil', 'pomegranate', 'banana', 'mango', 'grapes', 'watermelon', 'muskmelon', 'apple', 'orange', 'papaya', 'coconut', 'cotton', 'jute', 'coffee'],
     'alluvial': ['rice', 'maize', 'chickpea', 'kidneybeans', 'pigeonpeas', 'mothbeans', 'mungbean', 'blackgram', 'lentil', 'pomegranate', 'banana', 'mango', 'grapes', 'watermelon', 'muskmelon', 'apple', 'orange', 'papaya', 'coconut', 'cotton', 'jute', 'coffee'],
@@ -29,7 +29,7 @@ soil_crops_mapping = {
 }
 
 # Select the columns you need
-agri = agri[['state', 'district', 'market', 'commodity', 'modal_price']]
+#agri = agri[['state', 'district', 'market', 'commodity', 'modal_price']]
 weather = weather[['region', 'location_name', 'temperature_celsius', 'humidity']]
 rain = rain[['STATE_UT_NAME', 'DISTRICT', 'ANNUAL']]
 recomm = recomm[['temperature', 'humidity', 'rainfall', 'label']]
@@ -87,39 +87,50 @@ weather['location_name']=weather['location_name'].str.upper()
 weather['region']=weather['region'].str.upper()
 # Merge weather and rain DataFrames based on matching columns
 climate = pd.merge(weather, rain, left_on=['region', 'location_name'], right_on=['STATE_UT_NAME', 'DISTRICT'])
-recomm=pd.merge(recomm, sr, left_on='label', right_on='Crops')
+recomm=pd.merge(recomm, sr, left_on='label', right_on='Crop')
 rc = {}
-
-'''d = input("District: ")
+d='Jalpaiguri'
+print(recomm.columns)
+#d = input("District: ")
 t,r,h,s='','','',''
 for i1, r1 in climate.iterrows():
     if r1['DISTRICT'] == d.upper():
-        t,r,h=r1['temperature_celsius'], r1['ANNUAL'],r1['humidity']
+        t,r,h,s1=r1['temperature_celsius'], r1['ANNUAL'],r1['humidity'],r1['STATE_UT_NAME'].title()
         for i2, r2 in recomm.iterrows():  # Use recomm.iterrows() for proper iteration
-            c = 0
-            if abs(r1['temperature_celsius'] - r2['temperature'])==0:
-                c+=1
-                c += 1
-            if abs(r1['ANNUAL'] - r2['rainfall'])<=0:
-                c += 1
-            if abs(r1['humidity'] - r2['humidity'])==0:
-                c += 1
-            for i3,r3 in soil.iterrows():
-                if r3['State']==r1['STATE_UT_NAME']:
-                    s= r3['Soil_type']
-                    if r2['label'] in soil_crops_mapping[r3['Soil_type'].lower()]:
-                        rc[r2['label']] = c
+                c = 0
+                if abs(r1['temperature_celsius'] - r2['temperature'])<=5:
+                    c += 1
+                if abs(r1['ANNUAL'] - r2['rainfall'])<=50:
+                    c += 1
+                if abs(r1['humidity'] - r2['humidity'])<2:
+                    c += 1
+                for i3,r3 in soil.iterrows():
+                    if (r1['STATE_UT_NAME']==r3['State'].upper() and r2['Soil_type'].lower()==r3['Soil_type'].lower()):
+                        rc[r2['label']]=c
 print("Soil Type: ", s,"\nTemp(C): ", t, "\nAnnual rainfall(cm): ", r, "\nHumidity: ", h)
 print("Recommended crops: ")
+k={'Soil':s,'Temp':t,'Rain':r,'Humidity':h}
+m={'State':s1,'District':d.title()}
 rc = {k: v for k, v in sorted(rc.items(), key=lambda item: item[1],reverse=True)}
 c=0
+l=[]
 for i in rc.keys():
     if c<3:
         if rc[i] >= 2:
             print(i)
-            c+=1'''
+            c+=1
+            l.append(i)
+k['Crops']=l
+print(k,m)
 
-
+with open('C:\\xampp\\htdocs\\ap\\pro\\k.json', 'w') as file:
+    json.dump(k, file)
+    
+    
+with open('C:\\xampp\\htdocs\\ap\\pro\\m.json', 'w') as file:
+    json.dump(m, file)
+    
+    
 '''d=input("District: ")
 t,c=0,0
 for index,row in agri.iterrows():
